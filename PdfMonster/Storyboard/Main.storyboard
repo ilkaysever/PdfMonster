@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UYA-nV-nMv">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Download-->
+        <scene sceneID="LaF-GW-0Q1">
+            <objects>
+                <viewController id="YZW-64-hKD" customClass="ViewController" customModule="PdfMonster" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zH7-Ev-K1R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monster" translatesAutoresizingMaskIntoConstraints="NO" id="KWg-4s-l48">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://www.pdfmonster.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8uV-er-h1a">
+                                <rect key="frame" x="20" y="324" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="erC-Eb-dDc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lütfen indirmek istediğiniz Pdf dosyasının linkini aşağıdaki alana yapıştırınız ve ardından &quot;İndir.&quot; butonuna basınız." lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZS-76-ahq">
+                                <rect key="frame" x="20" y="144" width="374" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Zd2-o3-Jix"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XE7-Q0-cI1">
+                                <rect key="frame" x="20" y="418" width="374" height="44"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2d7-eN-hT5"/>
+                                </constraints>
+                                <state key="normal" title="İndir">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadButtonTapped:" destination="YZW-64-hKD" eventType="touchUpInside" id="XGw-ec-pkt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KZS-76-ahq" firstAttribute="leading" secondItem="4Qp-st-8vU" secondAttribute="leading" constant="20" id="EER-Eh-eMs"/>
+                            <constraint firstItem="8uV-er-h1a" firstAttribute="leading" secondItem="4Qp-st-8vU" secondAttribute="leading" constant="20" id="EaJ-lp-pHG"/>
+                            <constraint firstItem="XE7-Q0-cI1" firstAttribute="top" secondItem="8uV-er-h1a" secondAttribute="bottom" constant="50" id="Lf3-AY-swM"/>
+                            <constraint firstItem="8uV-er-h1a" firstAttribute="top" secondItem="KZS-76-ahq" secondAttribute="bottom" constant="80" id="QVw-yJ-fIj"/>
+                            <constraint firstItem="KWg-4s-l48" firstAttribute="leading" secondItem="4Qp-st-8vU" secondAttribute="leading" id="RUj-nN-RzK"/>
+                            <constraint firstItem="4Qp-st-8vU" firstAttribute="trailing" secondItem="8uV-er-h1a" secondAttribute="trailing" constant="20" id="Xp7-44-FUV"/>
+                            <constraint firstItem="4Qp-st-8vU" firstAttribute="trailing" secondItem="XE7-Q0-cI1" secondAttribute="trailing" constant="20" id="dgw-hy-VW6"/>
+                            <constraint firstItem="KWg-4s-l48" firstAttribute="top" secondItem="zH7-Ev-K1R" secondAttribute="top" id="ePa-LA-Wbw"/>
+                            <constraint firstAttribute="bottom" secondItem="KWg-4s-l48" secondAttribute="bottom" id="hHu-nn-caW"/>
+                            <constraint firstItem="4Qp-st-8vU" firstAttribute="trailing" secondItem="KWg-4s-l48" secondAttribute="trailing" id="lOn-Py-vsv"/>
+                            <constraint firstItem="KZS-76-ahq" firstAttribute="top" secondItem="4Qp-st-8vU" secondAttribute="top" constant="100" id="mtL-Fc-KHR"/>
+                            <constraint firstItem="4Qp-st-8vU" firstAttribute="trailing" secondItem="KZS-76-ahq" secondAttribute="trailing" constant="20" id="rhS-AR-J7R"/>
+                            <constraint firstItem="XE7-Q0-cI1" firstAttribute="leading" secondItem="4Qp-st-8vU" secondAttribute="leading" constant="20" id="ucM-vW-9NN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Qp-st-8vU"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Download" image="download" id="W7g-vb-UAY"/>
+                    <connections>
+                        <outlet property="bckgrndImgView" destination="KWg-4s-l48" id="LIm-KM-Rso"/>
+                        <outlet property="descriptionLabel" destination="KZS-76-ahq" id="opt-J5-Ybt"/>
+                        <outlet property="downloadButton" destination="XE7-Q0-cI1" id="shz-Vh-ehS"/>
+                        <outlet property="urlTextField" destination="8uV-er-h1a" id="e0P-38-BLZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xYs-XB-NRh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286.9565217391305" y="227.67857142857142"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="L0D-CT-egf">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UYA-nV-nMv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g10-gj-xGw">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="YZW-64-hKD" kind="relationship" relationship="viewControllers" id="8DM-Nc-miy"/>
+                        <segue destination="lJe-S9-u5k" kind="relationship" relationship="viewControllers" id="RJP-AK-hax"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Fw-XR-T1E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376.81159420289856" y="227.67857142857142"/>
+        </scene>
+        <!--Documents-->
+        <scene sceneID="MZ8-KA-XOh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Documents" id="lJe-S9-u5k" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="eZY-nK-6zb"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J8l-PN-DMU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="592" y="644"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="download" width="24" height="22"/>
+        <image name="monster" width="377" height="812"/>
+    </resources>
+</document>

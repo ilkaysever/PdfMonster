@@ -1,0 +1,518 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3864C0F06B5C949CCC09EB98 /* Pods_PdfMonster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35763CDFACC35FE4BC4B6767 /* Pods_PdfMonster.framework */; };
+		6B01F12D24ED321800EBD729 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B01F12C24ED321800EBD729 /* AppDelegate.swift */; };
+		6B01F12F24ED321800EBD729 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B01F12E24ED321800EBD729 /* SceneDelegate.swift */; };
+		6B01F13724ED321800EBD729 /* PdfMonster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B01F13524ED321800EBD729 /* PdfMonster.xcdatamodeld */; };
+		6B01F13924ED321A00EBD729 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B01F13824ED321A00EBD729 /* Assets.xcassets */; };
+		6B01F13C24ED321A00EBD729 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B01F13A24ED321A00EBD729 /* LaunchScreen.storyboard */; };
+		6B01F14A24ED6FEC00EBD729 /* CellHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B01F14924ED6FEC00EBD729 /* CellHelper.swift */; };
+		6B01F14C24ED70E400EBD729 /* Documents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B01F14B24ED70E400EBD729 /* Documents.storyboard */; };
+		6B01F14E24ED716600EBD729 /* DocumentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B01F14D24ED716600EBD729 /* DocumentsVC.swift */; };
+		6B01F15424ED7A8800EBD729 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B01F15324ED7A8800EBD729 /* ViewController.swift */; };
+		6B01F15624ED7A9700EBD729 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B01F15524ED7A9700EBD729 /* Main.storyboard */; };
+		6B01F15E24ED9E4C00EBD729 /* DocumentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B01F15C24ED9E4C00EBD729 /* DocumentsTableViewCell.swift */; };
+		6B01F15F24ED9E4C00EBD729 /* DocumentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B01F15D24ED9E4C00EBD729 /* DocumentsTableViewCell.xib */; };
+		6B50F34224EE90BB002A8F1B /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B50F34124EE90BB002A8F1B /* WebView.storyboard */; };
+		6B50F34424EE90D1002A8F1B /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B50F34324EE90D1002A8F1B /* WebViewVC.swift */; };
+		6B5DC0C624EE98B2006624EB /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B5DC0C524EE98B2006624EB /* WebKit.framework */; };
+		6B64851824EE64F900C67BAC /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64851724EE64F900C67BAC /* DataSet.swift */; };
+		6B64851A24EE660E00C67BAC /* PdfItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64851924EE660E00C67BAC /* PdfItem.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		35763CDFACC35FE4BC4B6767 /* Pods_PdfMonster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PdfMonster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B01F12924ED321800EBD729 /* PdfMonster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PdfMonster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B01F12C24ED321800EBD729 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6B01F12E24ED321800EBD729 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6B01F13624ED321800EBD729 /* PdfMonster.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PdfMonster.xcdatamodel; sourceTree = "<group>"; };
+		6B01F13824ED321A00EBD729 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6B01F13B24ED321A00EBD729 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6B01F13D24ED321A00EBD729 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B01F14924ED6FEC00EBD729 /* CellHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellHelper.swift; sourceTree = "<group>"; };
+		6B01F14B24ED70E400EBD729 /* Documents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Documents.storyboard; sourceTree = "<group>"; };
+		6B01F14D24ED716600EBD729 /* DocumentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsVC.swift; sourceTree = "<group>"; };
+		6B01F15324ED7A8800EBD729 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6B01F15524ED7A9700EBD729 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		6B01F15C24ED9E4C00EBD729 /* DocumentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsTableViewCell.swift; sourceTree = "<group>"; };
+		6B01F15D24ED9E4C00EBD729 /* DocumentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentsTableViewCell.xib; sourceTree = "<group>"; };
+		6B50F34124EE90BB002A8F1B /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
+		6B50F34324EE90D1002A8F1B /* WebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
+		6B5DC0C524EE98B2006624EB /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		6B64851724EE64F900C67BAC /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
+		6B64851924EE660E00C67BAC /* PdfItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfItem.swift; sourceTree = "<group>"; };
+		C899AF8C3295C344948F41AF /* Pods-PdfMonster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfMonster.release.xcconfig"; path = "Target Support Files/Pods-PdfMonster/Pods-PdfMonster.release.xcconfig"; sourceTree = "<group>"; };
+		E8E839541DFC32D80380B205 /* Pods-PdfMonster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfMonster.debug.xcconfig"; path = "Target Support Files/Pods-PdfMonster/Pods-PdfMonster.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B01F12624ED321800EBD729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B5DC0C624EE98B2006624EB /* WebKit.framework in Frameworks */,
+				3864C0F06B5C949CCC09EB98 /* Pods_PdfMonster.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C2630AFAA5C46C61E2FB11B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8E839541DFC32D80380B205 /* Pods-PdfMonster.debug.xcconfig */,
+				C899AF8C3295C344948F41AF /* Pods-PdfMonster.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6B01F12024ED321800EBD729 = {
+			isa = PBXGroup;
+			children = (
+				6B01F12B24ED321800EBD729 /* PdfMonster */,
+				6B01F12A24ED321800EBD729 /* Products */,
+				0C2630AFAA5C46C61E2FB11B /* Pods */,
+				D0C05F6B69017B0EFDE385BF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6B01F12A24ED321800EBD729 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B01F12924ED321800EBD729 /* PdfMonster.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B01F12B24ED321800EBD729 /* PdfMonster */ = {
+			isa = PBXGroup;
+			children = (
+				6B01F14424ED554900EBD729 /* Models */,
+				6B01F14624ED555B00EBD729 /* Views */,
+				6B01F14324ED553C00EBD729 /* Controllers */,
+				6B01F14524ED555000EBD729 /* Storyboard */,
+				6B01F14824ED556D00EBD729 /* Helpers */,
+				6B01F14724ED556600EBD729 /* API */,
+				6B01F12C24ED321800EBD729 /* AppDelegate.swift */,
+				6B01F12E24ED321800EBD729 /* SceneDelegate.swift */,
+				6B01F13824ED321A00EBD729 /* Assets.xcassets */,
+				6B01F13D24ED321A00EBD729 /* Info.plist */,
+				6B01F13524ED321800EBD729 /* PdfMonster.xcdatamodeld */,
+			);
+			path = PdfMonster;
+			sourceTree = "<group>";
+		};
+		6B01F14324ED553C00EBD729 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6B01F15324ED7A8800EBD729 /* ViewController.swift */,
+				6B01F14D24ED716600EBD729 /* DocumentsVC.swift */,
+				6B50F34324EE90D1002A8F1B /* WebViewVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6B01F14424ED554900EBD729 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6B64851924EE660E00C67BAC /* PdfItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6B01F14524ED555000EBD729 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				6B01F15524ED7A9700EBD729 /* Main.storyboard */,
+				6B01F14B24ED70E400EBD729 /* Documents.storyboard */,
+				6B01F13A24ED321A00EBD729 /* LaunchScreen.storyboard */,
+				6B50F34124EE90BB002A8F1B /* WebView.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		6B01F14624ED555B00EBD729 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6B01F15B24ED9DEB00EBD729 /* CustomCells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6B01F14724ED556600EBD729 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6B64851724EE64F900C67BAC /* DataSet.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		6B01F14824ED556D00EBD729 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6B01F14924ED6FEC00EBD729 /* CellHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6B01F15B24ED9DEB00EBD729 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				6B01F15D24ED9E4C00EBD729 /* DocumentsTableViewCell.xib */,
+				6B01F15C24ED9E4C00EBD729 /* DocumentsTableViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		D0C05F6B69017B0EFDE385BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B5DC0C524EE98B2006624EB /* WebKit.framework */,
+				35763CDFACC35FE4BC4B6767 /* Pods_PdfMonster.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B01F12824ED321800EBD729 /* PdfMonster */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B01F14024ED321A00EBD729 /* Build configuration list for PBXNativeTarget "PdfMonster" */;
+			buildPhases = (
+				5264879B852639DEC3BCF82D /* [CP] Check Pods Manifest.lock */,
+				6B01F12524ED321800EBD729 /* Sources */,
+				6B01F12624ED321800EBD729 /* Frameworks */,
+				6B01F12724ED321800EBD729 /* Resources */,
+				89014816BE1E3035D071A31A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PdfMonster;
+			productName = PdfMonster;
+			productReference = 6B01F12924ED321800EBD729 /* PdfMonster.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6B01F12124ED321800EBD729 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "ilkay sever";
+				TargetAttributes = {
+					6B01F12824ED321800EBD729 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+				};
+			};
+			buildConfigurationList = 6B01F12424ED321800EBD729 /* Build configuration list for PBXProject "PdfMonster" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6B01F12024ED321800EBD729;
+			productRefGroup = 6B01F12A24ED321800EBD729 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B01F12824ED321800EBD729 /* PdfMonster */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B01F12724ED321800EBD729 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B01F13C24ED321A00EBD729 /* LaunchScreen.storyboard in Resources */,
+				6B01F15624ED7A9700EBD729 /* Main.storyboard in Resources */,
+				6B01F15F24ED9E4C00EBD729 /* DocumentsTableViewCell.xib in Resources */,
+				6B50F34224EE90BB002A8F1B /* WebView.storyboard in Resources */,
+				6B01F14C24ED70E400EBD729 /* Documents.storyboard in Resources */,
+				6B01F13924ED321A00EBD729 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5264879B852639DEC3BCF82D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PdfMonster-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89014816BE1E3035D071A31A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PdfMonster/Pods-PdfMonster-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PdfMonster/Pods-PdfMonster-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PdfMonster/Pods-PdfMonster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B01F12524ED321800EBD729 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B01F14A24ED6FEC00EBD729 /* CellHelper.swift in Sources */,
+				6B01F13724ED321800EBD729 /* PdfMonster.xcdatamodeld in Sources */,
+				6B01F12D24ED321800EBD729 /* AppDelegate.swift in Sources */,
+				6B64851824EE64F900C67BAC /* DataSet.swift in Sources */,
+				6B50F34424EE90D1002A8F1B /* WebViewVC.swift in Sources */,
+				6B64851A24EE660E00C67BAC /* PdfItem.swift in Sources */,
+				6B01F15E24ED9E4C00EBD729 /* DocumentsTableViewCell.swift in Sources */,
+				6B01F15424ED7A8800EBD729 /* ViewController.swift in Sources */,
+				6B01F12F24ED321800EBD729 /* SceneDelegate.swift in Sources */,
+				6B01F14E24ED716600EBD729 /* DocumentsVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6B01F13A24ED321A00EBD729 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B01F13B24ED321A00EBD729 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6B01F13E24ED321A00EBD729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6B01F13F24ED321A00EBD729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6B01F14124ED321A00EBD729 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8E839541DFC32D80380B205 /* Pods-PdfMonster.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K35N97823B;
+				INFOPLIST_FILE = PdfMonster/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ilkaysever.PdfMonster;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6B01F14224ED321A00EBD729 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C899AF8C3295C344948F41AF /* Pods-PdfMonster.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K35N97823B;
+				INFOPLIST_FILE = PdfMonster/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ilkaysever.PdfMonster;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B01F12424ED321800EBD729 /* Build configuration list for PBXProject "PdfMonster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B01F13E24ED321A00EBD729 /* Debug */,
+				6B01F13F24ED321A00EBD729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B01F14024ED321A00EBD729 /* Build configuration list for PBXNativeTarget "PdfMonster" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B01F14124ED321A00EBD729 /* Debug */,
+				6B01F14224ED321A00EBD729 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6B01F13524ED321800EBD729 /* PdfMonster.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6B01F13624ED321800EBD729 /* PdfMonster.xcdatamodel */,
+			);
+			currentVersion = 6B01F13624ED321800EBD729 /* PdfMonster.xcdatamodel */;
+			path = PdfMonster.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6B01F12124ED321800EBD729 /* Project object */;
+}

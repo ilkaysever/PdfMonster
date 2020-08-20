@@ -1,0 +1,6 @@
+framework module Pods_PdfMonster {
+  umbrella header "Pods-PdfMonster-umbrella.h"
+
+  export *
+  module * { export * }
+}
