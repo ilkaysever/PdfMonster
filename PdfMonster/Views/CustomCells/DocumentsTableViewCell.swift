@@ -12,7 +12,7 @@ import UIKit
 
 protocol PdfTableviewCellDelegate {
     func didClickDownloadButton(cell: UITableViewCell)
-    func didSeeButton(cell: UITableViewCell)
+    func didSeeButton(cell: UITableViewCell) 
 }
 
 class DocumentsTableViewCell: UITableViewCell, ReusableView, NibLoadableView {

@@ -17,7 +17,7 @@ class DocumentsVC: UIViewController {
     @IBOutlet weak var backgrounImgView: UIImageView!
     
     var pdfArray: [PdfItem] = [
-        PdfItem(title: "Apple Developer Agreement", url: "https://developer.apple.com/accessories/Accessory-Design-Guidelines.pdf"),
+        PdfItem(title: "Accessory Design Guidelines for Apple Devices", url: "https://developer.apple.com/accessories/Accessory-Design-Guidelines.pdf"),
         PdfItem(title: "iTunes Developer Guides", url: "https://itunesconnect.apple.com/docs/iTunesConnect_DeveloperGuide.pdf"),
         PdfItem(title: "Annual Report 2009", url: "http://www.iso.org/iso/annual_report_2009.pdf")
     ]
@@ -64,6 +64,7 @@ extension DocumentsVC: UITableViewDataSource, UITableViewDelegate {
 extension DocumentsVC: PdfTableviewCellDelegate {
     
     func didClickDownloadButton(cell: UITableViewCell) {
+        (cell as! DocumentsTableViewCell).seeButton.isEnabled = false
         let indexPath = self.documentsTableView.indexPath(for: cell)
         print(indexPath?.row ?? "")
         
@@ -88,9 +89,9 @@ extension DocumentsVC: PdfTableviewCellDelegate {
     }
     
     func downloadFileWithIndex(index:Int) {
-        
-        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-        hud.mode = MBProgressHUDMode.determinateHorizontalBar
+        var hud = MBProgressHUD.showAdded(to: view, animated: true)
+        hud.mode = MBProgressHUDMode.indeterminate
+        hud.show(animated: true)
         hud.label.text = "Loading..."
         
         let urlString = pdfArray[index].url
@@ -103,9 +104,9 @@ extension DocumentsVC: PdfTableviewCellDelegate {
             return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
         }
         
-        AF.download(urlString as! URLRequestConvertible, to: destination).response { response in
+        AF.download("https://developer.apple.com/accessories/Accessory-Design-Guidelines.pdf", to: destination).response { response in
             debugPrint(response)
-            
+            hud.hide(animated: true)
             if response.error == nil, let filePath = response.fileURL?.path {
                 self.fileLocalURLDict[index] = filePath
             }
