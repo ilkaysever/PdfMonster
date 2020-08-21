@@ -18,8 +18,9 @@ class DocumentsVC: UIViewController {
     
     var pdfArray: [PdfItem] = [
         PdfItem(title: "Accessory Design Guidelines for Apple Devices", url: "https://developer.apple.com/accessories/Accessory-Design-Guidelines.pdf"),
-        PdfItem(title: "iTunes Developer Guides", url: "https://itunesconnect.apple.com/docs/iTunesConnect_DeveloperGuide.pdf"),
-        PdfItem(title: "Annual Report 2009", url: "http://www.iso.org/iso/annual_report_2009.pdf")
+        PdfItem(title: "Application Developer’s Guide", url: "https://docs.marklogic.com/guide/app-dev.pdf"),
+        PdfItem(title: "Annual Report 2009", url: "http://www.iso.org/iso/annual_report_2009.pdf"),
+        PdfItem(title: "Android Programming Cookbook", url: "https://enos.itcollege.ee/~jpoial/allalaadimised/reading/Android-Programming-Cookbook.pdf")
     ]
     
     var fileLocalURLDict = [Int: String]()
@@ -89,7 +90,7 @@ extension DocumentsVC: PdfTableviewCellDelegate {
     }
     
     func downloadFileWithIndex(index:Int) {
-        var hud = MBProgressHUD.showAdded(to: view, animated: true)
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.mode = MBProgressHUDMode.indeterminate
         hud.show(animated: true)
         hud.label.text = "Loading..."
@@ -104,7 +105,20 @@ extension DocumentsVC: PdfTableviewCellDelegate {
             return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
         }
         
-        AF.download("https://developer.apple.com/accessories/Accessory-Design-Guidelines.pdf", to: destination).response { response in
+//        let url = URL(string: urlString ?? "")!
+//        let task = URLSession.shared.downloadTask(with: url) { localURL, urlResponse, error in
+//            if let localURL = localURL {
+//                DispatchQueue.main.async {
+//                    hud.hide(animated: true)
+//                }
+//                if let string = try? String(contentsOf: localURL) {
+//                    print(string)
+//                }
+//            }
+//        }
+//        task.resume()
+        
+        AF.download(urlString ?? "", to: destination).response { response in
             debugPrint(response)
             hud.hide(animated: true)
             if response.error == nil, let filePath = response.fileURL?.path {
@@ -112,5 +126,4 @@ extension DocumentsVC: PdfTableviewCellDelegate {
             }
         }
     }
-    
 }

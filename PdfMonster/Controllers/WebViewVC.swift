@@ -29,7 +29,6 @@ class WebViewVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setURL()
-        
     }
         
     override func didReceiveMemoryWarning() {

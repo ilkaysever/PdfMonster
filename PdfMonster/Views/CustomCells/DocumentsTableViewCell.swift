@@ -18,6 +18,7 @@ protocol PdfTableviewCellDelegate {
 class DocumentsTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
     var delegate:PdfTableviewCellDelegate!
+    var pdfData: [PdfItem]?
     
     @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
