@@ -16,7 +16,7 @@ class DocumentsVC: UIViewController {
     @IBOutlet weak var documentsTableView: UITableView!
     @IBOutlet weak var backgrounImgView: UIImageView!
     
-    var pdfUrl: URL?
+    var url: URL?
     var fileLocalURLDict = [Int: String]()
     var pdfArray: [PdfItem] = [
         PdfItem(title: "Accessory Design Guidelines for Apple Devices", url: "https://developer.apple.com/accessories/Accessory-Design-Guidelines.pdf"),
@@ -61,104 +61,75 @@ extension DocumentsVC: UITableViewDataSource, UITableViewDelegate {
 }
 
 //MARK: - Delegate Methods
-
 extension DocumentsVC: PdfTableviewCellDelegate {
     
-    func didClickDownloadButton(cell: UITableViewCell) {
+    func didClickDownloadButton(cell: UITableViewCell, type: ProgressType) {
         
-        guard let url = URL(string: "https://enos.itcollege.ee/~jpoial/allalaadimised/reading/Android-Programming-Cookbook.pdf") else {return}
-        let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
-        let downloadTask = urlSession.downloadTask(with: url)
-        downloadTask.resume()
+        (cell as! DocumentsTableViewCell).seeButton.isEnabled = false
+        let indexPath = self.documentsTableView.indexPath(for: cell)
+        print(indexPath?.row ?? "")
         
-        //        (cell as! DocumentsTableViewCell).seeButton.isEnabled = false
-        //        let indexPath = self.documentsTableView.indexPath(for: cell)
-        //        print(indexPath?.row ?? "")
-        //
-        //        if let index = indexPath?.row {
-        //            (cell as! DocumentsTableViewCell).seeButton.isEnabled = true
-        //            downloadFileWithIndex(index: index)
-        //        }
+        if let ind = indexPath?.row {
+            (cell as! DocumentsTableViewCell).seeButton.isEnabled = true
+            downloadFileWithIndex(index: ind)
+        }
     }
     
     func didSeeButton(cell: UITableViewCell) {
-        
-        //let pdfView = WebViewVC()
-        //pdfView.pdfURL = self.pdfUrl
-        let storyBoard = UIStoryboard(name: "WebView", bundle: nil)
-        let nextViewController = storyBoard.instantiateViewController(identifier: "WebViewVC") as WebViewVC
-        self.navigationController?.pushViewController(nextViewController, animated: true)
-        nextViewController.pdfURL = self.pdfUrl
-        
-        //        let indexPath = self.documentsTableView.indexPath(for: cell)
-        //        print(indexPath?.row ?? "")
-        //
-        //        if let index = indexPath?.row {
-        //            let storyBoard = UIStoryboard(name: "WebView", bundle: nil)
-        //            let nextViewController = storyBoard.instantiateViewController(identifier: "WebViewVC") as WebViewVC
-        //            self.navigationController?.pushViewController(nextViewController, animated: true)
-        //            let urlString: String! = fileLocalURLDict[index]
-        //            nextViewController.pdfURL = self.pdfUrl
-        //        }
+        let indexPath = self.documentsTableView.indexPath(for: cell)
+        print(indexPath?.row ?? "")
+        findFiles()
     }
     
-//        func downloadFileWithIndex() {
-//            let hud = MBProgressHUD.showAdded(to: view, animated: true)
-//            hud.mode = MBProgressHUDMode.indeterminate
-//            hud.show(animated: true)
-//            hud.label.text = "Loading..."
-//
-//            let urlString = pdfArray[index].url
-//
-//            let destination: DownloadRequest.Destination = { _, _ in
-//                let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-//                print("*************documentURL:***************", documentsURL)
-//                let fileURL = documentsURL.appendingPathComponent("\(index).pdf")
-//                print("*************fileURL:*************", fileURL)
-//                return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-//            }
-//
-//            let url = URL(string: urlString ?? "")!
-//            let task = URLSession.shared.downloadTask(with: url) { localURL, urlResponse, error in
-//                if let localURL = localURL {
-//                    DispatchQueue.main.async {
-//                        hud.hide(animated: true)
-//                    }
-//                    if let string = try? String(contentsOf: localURL) {
-//                        print(string)
-//                    }
-//                }
-//            }
-//
-//            task.resume()
-//
-//            AF.download(urlString ?? "", to: destination).response { response in
-//                debugPrint(response)
-//                hud.hide(animated: true)
-//                if response.error == nil, let filePath = response.fileURL?.path {
-//                    self.fileLocalURLDict[index] = filePath
-//                }
-//            }
-//        }
-}
-
-extension DocumentsVC: URLSessionDownloadDelegate {
-    
-    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
-        print("Dosyanın Yüklendiği Yer:", location)
+    func downloadFileWithIndex() {
+        let hud = MBProgressHUD.showAdded(to: view, animated: true)
+        hud.mode = MBProgressHUDMode.indeterminate
+        hud.show(animated: true)
+        hud.label.text = "Loading..."
         
-        guard let url = downloadTask.originalRequest?.url else {return}
-        let docsPath = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
-        let destinationPath = docsPath.appendingPathComponent(url.lastPathComponent)
+        let urlString = pdfArray[index].url
         
-        try? FileManager.default.removeItem(at: destinationPath)
-        
-        do{
-            try FileManager.default.copyItem(at: location, to: destinationPath)
-            self.pdfUrl = destinationPath
-            print("Dosyanın Yüklendiği Yer:", self.pdfUrl ?? "NOT")
-        } catch let error {
-            print("Copy Error: \(error.localizedDescription)")
+        let destination: DownloadRequest.Destination = { _, _ in
+            let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            print("*************documentURL:***************", documentsURL)
+            let fileURL = documentsURL.appendingPathComponent("\(index).pdf")
+            print("*************fileURL:*************", fileURL)
+            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
         }
+        
+        AF.download(urlString ?? "", to: destination).response { response in
+            debugPrint(response)
+            hud.hide(animated: true)
+            if response.error == nil, let filePath = response.fileURL?.path {
+                self.fileLocalURLDict[index] = filePath
+            }
+        }
+    }
+    
+    func findFiles() {
+        let fileManager = FileManager.default
+        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        do {
+            let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil)
+            // process files
+            print(fileURLs)
+            let storyBoard = UIStoryboard(name: "WebView", bundle: nil)
+            let nextViewController = storyBoard.instantiateViewController(identifier: "WebViewVC") as WebViewVC
+            nextViewController.url = fileURLs.first
+            self.navigationController?.pushViewController(nextViewController, animated: true)
+        } catch {
+            print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
+        }
+        print(FileManager.default.urls(for: .documentDirectory) ?? "none")
+        
+    }
+}
+// MARK: - File Manager
+
+extension FileManager {
+    func urls(for directory: FileManager.SearchPathDirectory, skipsHiddenFiles: Bool = true ) -> [URL]? {
+        let documentsURL = urls(for: directory, in: .userDomainMask)[0]
+        let fileURLs = try? contentsOfDirectory(at: documentsURL, includingPropertiesForKeys: nil, options: skipsHiddenFiles ? .skipsHiddenFiles : [] )
+        return fileURLs
     }
 }

@@ -14,27 +14,13 @@ class WebViewVC: UIViewController {
     
     @IBOutlet weak var pdfWebView: WKWebView!
     
-    var pdfView = PDFView()
-    var pdfURL: URL!
     var urlString: String? = ""
+    var url: URL!
+    var pdfView = PDFView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.addSubview(pdfView)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        
-        if let document = PDFDocument(url: pdfURL) {
-            pdfView.document = document
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
-            self.dismiss(animated: true, completion: nil)
-        })
-        
-    }
-    
-    override func viewDidLayoutSubviews() {
-        pdfView.frame = self.view.frame
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,13 +30,12 @@ class WebViewVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //setURL()
+        setURL()
     }
     
-//    func setURL() {
-//        let fileURL = URL(fileURLWithPath: self.urlString ?? "")
-//        let request = URLRequest(url: fileURL)
-//        self.pdfWebView.load(request)
-//    }
+    func setURL() {
+        let url = URL(string: "file:///Users/ilkaysever/Library/Developer/CoreSimulator/Devices/D429FA6E-7E62-4F7B-8743-07048CB76581/data/Containers/Data/Application/37B776ED-E0FE-47CD-886C-39CE6720E5F6/Library/Caches/Android-Programming-Cookbook.pdf")
+        pdfWebView.loadFileURL(url!, allowingReadAccessTo: url!)
+    }
     
 }

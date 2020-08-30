@@ -11,12 +11,13 @@ import UIKit
 //MARK: - Delegate
 
 protocol PdfTableviewCellDelegate {
-    func didClickDownloadButton(cell: UITableViewCell)
+    func didClickDownloadButton(cell: UITableViewCell, type:ProgressType)
     func didSeeButton(cell: UITableViewCell) 
 }
 
 class DocumentsTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
+    var indexPath: IndexPath?
     var delegate:PdfTableviewCellDelegate!
     var pdfData: [PdfItem]?
     
@@ -41,7 +42,7 @@ class DocumentsTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
     @IBAction func downloadButton(_ sender: Any) {
         print("download")
-        delegate?.didClickDownloadButton(cell: self)
+        delegate?.didClickDownloadButton(cell: self, type: .show)
     }
     
     @IBAction func seeButton(_ sender: Any) {
