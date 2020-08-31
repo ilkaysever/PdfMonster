@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-import PDFKit
 
 class WebViewVC: UIViewController {
     
@@ -16,7 +15,6 @@ class WebViewVC: UIViewController {
     
     var urlString: String? = ""
     var url: URL!
-    var pdfView = PDFView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +32,6 @@ class WebViewVC: UIViewController {
     }
     
     func setURL() {
-        let url = URL(string: "file:///Users/ilkaysever/Library/Developer/CoreSimulator/Devices/D429FA6E-7E62-4F7B-8743-07048CB76581/data/Containers/Data/Application/37B776ED-E0FE-47CD-886C-39CE6720E5F6/Library/Caches/Android-Programming-Cookbook.pdf")
         pdfWebView.loadFileURL(url!, allowingReadAccessTo: url!)
     }
     

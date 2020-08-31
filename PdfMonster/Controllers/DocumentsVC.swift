@@ -63,25 +63,25 @@ extension DocumentsVC: UITableViewDataSource, UITableViewDelegate {
 //MARK: - Delegate Methods
 extension DocumentsVC: PdfTableviewCellDelegate {
     
-    func didClickDownloadButton(cell: UITableViewCell, type: ProgressType) {
+    func didClickDownloadButton(cell: UITableViewCell) {
         
         (cell as! DocumentsTableViewCell).seeButton.isEnabled = false
         let indexPath = self.documentsTableView.indexPath(for: cell)
         print(indexPath?.row ?? "")
         
-        if let ind = indexPath?.row {
+        if let index = indexPath?.row {
             (cell as! DocumentsTableViewCell).seeButton.isEnabled = true
-            downloadFileWithIndex(index: ind)
+            downloadFileWithIndex(index: index)
         }
     }
     
     func didSeeButton(cell: UITableViewCell) {
         let indexPath = self.documentsTableView.indexPath(for: cell)
         print(indexPath?.row ?? "")
-        findFiles()
+        findFiles(index: indexPath ?? nil)
     }
     
-    func downloadFileWithIndex() {
+    func downloadFileWithIndex(index: Int) {
         let hud = MBProgressHUD.showAdded(to: view, animated: true)
         hud.mode = MBProgressHUDMode.indeterminate
         hud.show(animated: true)
@@ -91,7 +91,7 @@ extension DocumentsVC: PdfTableviewCellDelegate {
         
         let destination: DownloadRequest.Destination = { _, _ in
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            print("*************documentURL:***************", documentsURL)
+            print("*************documentURL:*************", documentsURL)
             let fileURL = documentsURL.appendingPathComponent("\(index).pdf")
             print("*************fileURL:*************", fileURL)
             return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
@@ -106,7 +106,7 @@ extension DocumentsVC: PdfTableviewCellDelegate {
         }
     }
     
-    func findFiles() {
+    func findFiles(index: IndexPath?) {
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         do {
@@ -115,17 +115,15 @@ extension DocumentsVC: PdfTableviewCellDelegate {
             print(fileURLs)
             let storyBoard = UIStoryboard(name: "WebView", bundle: nil)
             let nextViewController = storyBoard.instantiateViewController(identifier: "WebViewVC") as WebViewVC
-            nextViewController.url = fileURLs.first
+            nextViewController.url = fileURLs[index!.row]
             self.navigationController?.pushViewController(nextViewController, animated: true)
         } catch {
             print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
         }
         print(FileManager.default.urls(for: .documentDirectory) ?? "none")
-        
     }
 }
 // MARK: - File Manager
-
 extension FileManager {
     func urls(for directory: FileManager.SearchPathDirectory, skipsHiddenFiles: Bool = true ) -> [URL]? {
         let documentsURL = urls(for: directory, in: .userDomainMask)[0]
