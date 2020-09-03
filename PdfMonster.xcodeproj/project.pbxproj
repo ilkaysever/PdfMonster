@@ -25,6 +25,7 @@
 		6B5DC0C624EE98B2006624EB /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B5DC0C524EE98B2006624EB /* WebKit.framework */; };
 		6B64851824EE64F900C67BAC /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64851724EE64F900C67BAC /* DataSet.swift */; };
 		6B64851A24EE660E00C67BAC /* PdfItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64851924EE660E00C67BAC /* PdfItem.swift */; };
+		6BB56F052500F8BB00B93D0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BB56F042500F8BB00B93D0A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		6B5DC0C524EE98B2006624EB /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		6B64851724EE64F900C67BAC /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
 		6B64851924EE660E00C67BAC /* PdfItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfItem.swift; sourceTree = "<group>"; };
+		6BB56F042500F8BB00B93D0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C899AF8C3295C344948F41AF /* Pods-PdfMonster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfMonster.release.xcconfig"; path = "Target Support Files/Pods-PdfMonster/Pods-PdfMonster.release.xcconfig"; sourceTree = "<group>"; };
 		E8E839541DFC32D80380B205 /* Pods-PdfMonster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfMonster.debug.xcconfig"; path = "Target Support Files/Pods-PdfMonster/Pods-PdfMonster.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				6B01F12E24ED321800EBD729 /* SceneDelegate.swift */,
 				6B01F13824ED321A00EBD729 /* Assets.xcassets */,
 				6B01F13D24ED321A00EBD729 /* Info.plist */,
+				6BB56F042500F8BB00B93D0A /* GoogleService-Info.plist */,
 				6B01F13524ED321800EBD729 /* PdfMonster.xcdatamodeld */,
 			);
 			path = PdfMonster;
@@ -193,6 +196,7 @@
 				6B01F12624ED321800EBD729 /* Frameworks */,
 				6B01F12724ED321800EBD729 /* Resources */,
 				89014816BE1E3035D071A31A /* [CP] Embed Pods Frameworks */,
+				6BB56F062500FA7A00B93D0A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -247,6 +251,7 @@
 				6B50F34224EE90BB002A8F1B /* WebView.storyboard in Resources */,
 				6B01F14C24ED70E400EBD729 /* Documents.storyboard in Resources */,
 				6B01F13924ED321A00EBD729 /* Assets.xcassets in Resources */,
+				6BB56F052500F8BB00B93D0A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +279,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		6BB56F062500FA7A00B93D0A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		89014816BE1E3035D071A31A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

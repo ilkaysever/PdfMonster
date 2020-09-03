@@ -9,5 +9,7 @@ target 'PdfMonster' do
 
   pod 'Alamofire', '5.2'
   pod 'MBProgressHUD', '1.2.0'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
 
 end
