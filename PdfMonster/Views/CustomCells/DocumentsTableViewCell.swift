@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseCrashlytics
+import Firebase
+import FirebaseCore
 
 //MARK: - Delegate
 
@@ -14,6 +17,18 @@ protocol PdfTableviewCellDelegate {
     func didClickDownloadButton(cell: UITableViewCell)
     func didSeeButton(cell: UITableViewCell) 
 }
+
+let userInfo = [
+  NSLocalizedDescriptionKey: NSLocalizedString("The request failed.", comment: ""),
+  NSLocalizedFailureReasonErrorKey: NSLocalizedString("The response returned a 404.", comment: ""),
+  NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Does this page exist?", comment: ""),
+  "ProductID": "123456",
+  "View": "MainView"
+]
+
+let error = NSError.init(domain: NSCocoaErrorDomain,
+                         code: -1002,
+                         userInfo: userInfo)
 
 class DocumentsTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
@@ -43,11 +58,16 @@ class DocumentsTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     @IBAction func downloadButton(_ sender: Any) {
         print("download")
         delegate?.didClickDownloadButton(cell: self)
+        fatalError()
+        //Analytics.logEvent("Pdf İndirildi", parameters: nil)
+        //Crashlytics.crashlytics().record(error: error)
     }
     
     @IBAction func seeButton(_ sender: Any) {
         print("see")
         delegate?.didSeeButton(cell: self)
+        //Analytics.logEvent("Pdf Açıldı", parameters: nil)
+        //Crashlytics.crashlytics().record(error: error)
     }
     
 }

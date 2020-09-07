@@ -26,6 +26,7 @@
 		6B64851824EE64F900C67BAC /* DataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64851724EE64F900C67BAC /* DataSet.swift */; };
 		6B64851A24EE660E00C67BAC /* PdfItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B64851924EE660E00C67BAC /* PdfItem.swift */; };
 		6BB56F052500F8BB00B93D0A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BB56F042500F8BB00B93D0A /* GoogleService-Info.plist */; };
+		C09AD2C725011B1A0062BFC3 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09AD2C625011B1A0062BFC3 /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		6B64851724EE64F900C67BAC /* DataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSet.swift; sourceTree = "<group>"; };
 		6B64851924EE660E00C67BAC /* PdfItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PdfItem.swift; sourceTree = "<group>"; };
 		6BB56F042500F8BB00B93D0A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C09AD2C625011B1A0062BFC3 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C899AF8C3295C344948F41AF /* Pods-PdfMonster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfMonster.release.xcconfig"; path = "Target Support Files/Pods-PdfMonster/Pods-PdfMonster.release.xcconfig"; sourceTree = "<group>"; };
 		E8E839541DFC32D80380B205 /* Pods-PdfMonster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfMonster.debug.xcconfig"; path = "Target Support Files/Pods-PdfMonster/Pods-PdfMonster.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C09AD2C725011B1A0062BFC3 /* AdSupport.framework in Frameworks */,
 				6B5DC0C624EE98B2006624EB /* WebKit.framework in Frameworks */,
 				3864C0F06B5C949CCC09EB98 /* Pods_PdfMonster.framework in Frameworks */,
 			);
@@ -178,6 +181,7 @@
 		D0C05F6B69017B0EFDE385BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C09AD2C625011B1A0062BFC3 /* AdSupport.framework */,
 				6B5DC0C524EE98B2006624EB /* WebKit.framework */,
 				35763CDFACC35FE4BC4B6767 /* Pods_PdfMonster.framework */,
 			);
