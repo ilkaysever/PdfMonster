@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import FirebaseCrashlytics
 import Firebase
 import FirebaseCore
+import FirebaseCrashlytics
 
 //MARK: - Delegate
 
@@ -58,16 +58,16 @@ class DocumentsTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     @IBAction func downloadButton(_ sender: Any) {
         print("download")
         delegate?.didClickDownloadButton(cell: self)
-        fatalError()
-        //Analytics.logEvent("Pdf İndirildi", parameters: nil)
-        //Crashlytics.crashlytics().record(error: error)
+        //fatalError()
+        Analytics.logEvent("Pdf İndirildi", parameters: nil)
+        Crashlytics.crashlytics().record(error: error)
     }
     
     @IBAction func seeButton(_ sender: Any) {
         print("see")
         delegate?.didSeeButton(cell: self)
-        //Analytics.logEvent("Pdf Açıldı", parameters: nil)
-        //Crashlytics.crashlytics().record(error: error)
+        Analytics.logEvent("Pdf Açıldı", parameters: nil)
+        Crashlytics.crashlytics().record(error: error)
     }
     
 }
